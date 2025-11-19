@@ -22,7 +22,7 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "net.warze.hspcolor.hspcolor"
+      "net.warze.hspcolor.HspColor"
     ]
   },
   "mixins": [
@@ -31,8 +31,9 @@
 
   "depends": {
     "fabricloader": ">=0.11.4",
-    "{{FABRIC_API}}": "*",
-    "{{CLOTH_CONFIG}}": "*"
+  "{{FABRIC_API}}": "*",
+  "{{CLOTH_CONFIG}}": "*",
+  "wynntils": "*"
   },
   "suggests": {
     "modmenu": "*"

@@ -3,7 +3,6 @@ package net.warze.hspcolor.utils;
 import net.minecraft.network.chat.*;
 import net.minecraft.network.chat.contents.PlainTextContents.LiteralContents;
 
-import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -23,22 +22,24 @@ public class TextUtils {
      * @return text after replacement
      */
     public static MutableComponent replaceTextInComponent(MutableComponent component, Pattern pattern, String replacement) {
+        MutableComponent result = Component.empty().withStyle(component.getStyle());
+        
         if (component.getContents() instanceof LiteralContents literal) {
             String text = literal.text();
             String replaced = pattern.matcher(text).replaceAll(replacement);
-            if (!replaced.equals(text)) {
-                component = Component.literal(replaced).withStyle(component.getStyle());
-            }
+            result = Component.literal(replaced).withStyle(component.getStyle());
+        } else {
+            result = component.copy();
         }
 
-        List<Component> siblings = component.getSiblings();
-        for (int i = 0; i < siblings.size(); i++) {
-            Component sibling = siblings.get(i);
+        for (Component sibling : component.getSiblings()) {
             if (sibling instanceof MutableComponent mutableSibling) {
-                siblings.set(i, replaceTextInComponent(mutableSibling, pattern, replacement));
+                result.append(replaceTextInComponent(mutableSibling, pattern, replacement));
+            } else {
+                result.append(sibling);
             }
         }
 
-        return component;
+        return result;
     }
 }

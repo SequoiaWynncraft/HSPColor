@@ -59,7 +59,8 @@ public abstract class ChatComponentMixin {
         if (!MCServerUtils.isWynnCraft()) return;
 
         final int MESSAGE_IDX = 1;
-        MutableComponent message = args.get(MESSAGE_IDX);
+        Component originalMessage = args.get(MESSAGE_IDX);
+        MutableComponent message = originalMessage.copy();
 
         List<Component> siblings = message.getSiblings();
 

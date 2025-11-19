@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+
+  "name": "HSP Color",
+  "icon": "icon.png",
+  "description": "A mod that matches the guild chat with the discord server colors and icons.",
+  "authors": [
+    {
+      "name": "Warze",
+      "contact": {
+        "email": "contact@warze.org",
+        "homepage": "https://warze.org/"
+      }
+    }
+  ],
+  "contact": {
+		"homepage": "https://hsp.warze.org/"
+	},
+  "license": "GPL-3.0",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "net.warze.hspcolor.hspcolor"
+    ]
+  },
+  "mixins": [
+    "hspcolor.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.4",
+    "{{FABRIC_API}}": "*",
+    "{{CLOTH_CONFIG}}": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

@@ -1,0 +1,33 @@
+plugins {
+    id 'fabric-loom'
+    id 'java-library'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
+group = 'ooo.sequoia'
+version = '0.1.0'
+
+repositories {
+    maven { url 'https://maven.fabricmc.net/' }
+    maven { url 'https://api.modrinth.com/maven' }
+    maven { url 'https://maven.shedaniel.me/' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.guava:guava:33.2.1-jre'
+    implementation 'it.unimi.dsi:fastutil:8.5.15'
+
+    compileOnly 'maven.modrinth:wynntils:v3.3.0-fabric'
+}

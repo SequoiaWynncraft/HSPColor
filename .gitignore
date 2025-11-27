@@ -32,6 +32,11 @@ bin/
 
 run/
 
+.devauth/
+
 
 logs/
 artifacts/
+old/
+docs/
+run/*

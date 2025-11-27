@@ -23,7 +23,7 @@
     "minecraft": "1.21.4",
     "java": ">=21",
     "fabric-api": ">=0.119.4+1.21.4",
-    "cloth-config2": ">=15.0.127",
+    "cloth-config2": ">=17.0.144",
     "wynntils": ">=3.3.0"
   },
   "suggests": {

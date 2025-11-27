@@ -1,0 +1,9 @@
+{
+  "config.hspcolor.title": "HSP Color",
+  "config.hspcolor.category.general": "General",
+  "config.hspcolor.option.resource_pack_updates": "Auto-update resource pack",
+  "config.hspcolor.option.mod_updates": "Auto-update mod",
+  "config.hspcolor.option.guild_formatter": "Guild chat formatter",
+  "config.hspcolor.option.strip_guild_rank_pill": "Remove guild rank pill (debug)",
+  "config.hspcolor.option.color_normalizer": "Color normalizer"
+}
